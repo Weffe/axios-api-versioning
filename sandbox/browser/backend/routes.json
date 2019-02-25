@@ -1,0 +1,5 @@
+{
+    "/books/v1": "/books-v1",
+    "/books/v2": "/books-v2",
+    "/books\\?api-version=:version": "/books-v:version"
+}
