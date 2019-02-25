@@ -1,16 +1,26 @@
 {
   "name": "axios-api-versioning",
+  "author": "Rogelio Negrete (Weffe)",
   "version": "0.1.0",
   "description": "Adds api versioning for axios",
-  "main": "index.js",
+  "main": "dist/lib/index.js",
+  "module": "dist/esm/index.js",
+  "jsnext:main": "dist/esm/index.js",
+  "types": "dist/lib/index.d.ts",
+  "sideEffects": false,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "run-s clean build:cjs build:esm",
+    "build:cjs": "tsc",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "clean": "rimraf dist/",
+    "release": "standard-version",
+    "serve:docs": "docsify serve docs",
+    "test": "jest"
   },
   "keywords": [
     "axios",
     "api versioning"
   ],
-  "author": "Rogelio Negrete",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -18,5 +28,48 @@
   },
   "bugs": {
     "url": "https://github.com/Weffe/axios-api-versioning/issues"
+  },
+  "homepage": "https://github.com/Weffe/axios-api-versioning",
+  "peerDependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.6",
+    "@types/lodash.clonedeep": "^4.5.5",
+    "axios": "^0.18.0",
+    "axios-mock-adapter": "^1.16.0",
+    "docsify-cli": "^4.3.0",
+    "jest": "^24.1.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^2.6.3",
+    "standard-version": "^5.0.0",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "lodash.clonedeep": "^4.5.0",
+    "tslib": "^1.9.3"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$"
   }
 }
