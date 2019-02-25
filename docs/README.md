@@ -1,2 +1,7 @@
-# axios-api-versioning
-Add easy to manage api versioning to Axios
+# Getting Started
+
+## What is it?
+
+`axios-api-versioning` adds an easy way to manage api versioning in your `axios` instances.
+
+

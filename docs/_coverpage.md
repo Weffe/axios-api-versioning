@@ -9,4 +9,4 @@
 - Media Type
 
 [GitHub](https://github.com/Weffe/axios-api-versioning)
-[Get Started](#axios-api-versioning)
+[Get Started](#getting-started)
