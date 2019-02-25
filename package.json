@@ -9,6 +9,8 @@
   "types": "dist/lib/index.d.ts",
   "sideEffects": false,
   "scripts": {
+    "prestart": "run-s clean",
+    "start": "tsc --watch",
     "build": "run-s clean build:cjs build:esm",
     "build:cjs": "tsc",
     "build:esm": "tsc -p tsconfig.esm.json",
