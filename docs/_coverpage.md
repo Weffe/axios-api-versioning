@@ -1,10 +1,12 @@
-# docsify <small>3.5</small>
+# axios-api-versioning
 
-> A magical documentation site generator.
+> Add easy to manage api versioning to Axios
 
-- Simple and lightweight (~21kB gzipped)
-- No statically built html files
-- Multiple themes
+- Simple and lightweight
+- Supports multiple versioning strategies:
+- Query String
+- Url Path
+- Media Type
 
 [GitHub](https://github.com/Weffe/axios-api-versioning)
 [Get Started](#axios-api-versioning)
