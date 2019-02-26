@@ -10,7 +10,7 @@ const client = withVersioning(axiosInstance);
 export function getBooksByQueryString(apiVersion: string) {
     return client.get('books', {
         apiVersion,
-        versioningStrategy: VersioningStrategy.QueryString
+        versioningStrategy: VersioningStrategy.QueryString,
     })
 }
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { AxiosPromise } from 'axios'
 import { VersioningStrategy } from 'axios-api-versioning'
-import { getBooksByQueryString, getBooksByUrlPath } from './api'
+import { getBooksByQueryString, getBooksByUrlPath, getBooksByMediaType } from './api'
 
 interface IAxiosRequestFormProps {
     onSubmit: (request: AxiosPromise) => void;
@@ -31,7 +31,7 @@ export class AxiosRequestForm extends React.Component<IAxiosRequestFormProps, IA
         })
     }
 
-    public handleSubmit = (e: any) => {
+    public handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         const { apiVersion, versioningStrategy } = this.state;
 
         e.preventDefault();
@@ -47,6 +47,12 @@ export class AxiosRequestForm extends React.Component<IAxiosRequestFormProps, IA
 
             this.props.onSubmit(pendingRequest);
         }
+
+        if (versioningStrategy === VersioningStrategy.MediaType) {
+            const pendingRequest = getBooksByMediaType(apiVersion);
+
+            this.props.onSubmit(pendingRequest);
+        }
     }
 
     public render() {
@@ -57,7 +63,8 @@ export class AxiosRequestForm extends React.Component<IAxiosRequestFormProps, IA
                 <form onSubmit={this.handleSubmit} className="w-full max-w-md">
                     <div className="flex flex-wrap -mx-3 mb-2">
                         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                            <label htmlFor="api-version"
+                            <label
+                                htmlFor="api-version"
                                 className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
                                 Api Version
                          </label>
@@ -70,18 +77,17 @@ export class AxiosRequestForm extends React.Component<IAxiosRequestFormProps, IA
                                     <option value="1">Version 1</option>
                                     <option value="2">Version 2</option>
                                 </select>
-                                <div
-                                    className="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+                                <div className="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
                                     <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 20 20">
-                                        <path
-                                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                                     </svg>
                                 </div>
                             </div>
                         </div>
                         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                            <label htmlFor="versioning-strategy"
+                            <label
+                                htmlFor="versioning-strategy"
                                 className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
                                 Versioning Strategy
                             </label>
@@ -92,21 +98,20 @@ export class AxiosRequestForm extends React.Component<IAxiosRequestFormProps, IA
                                     value={versioningStrategy}
                                     onChange={this.updateSelectValue('versioningStrategy')}>
                                     <option value={VersioningStrategy.QueryString}>Query String</option>
-                                    <option value={VersioningStrategy.MediaType}>Meida Type</option>
+                                    <option value={VersioningStrategy.MediaType}>Media Type</option>
                                     <option value={VersioningStrategy.UrlPath}>URL Path</option>
                                 </select>
-                                <div
-                                    className="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+                                <div className="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
                                     <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 20 20">
-                                        <path
-                                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                                     </svg>
                                 </div>
                             </div>
                         </div>
                         <div className="w-full px-3 mt-6 xs:mt-0">
-                            <button type="submit"
+                            <button
+                                type="submit"
                                 className="bg-blue hover:bg-blue-dark text-white focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded">
                                 Send Request
                             </button>

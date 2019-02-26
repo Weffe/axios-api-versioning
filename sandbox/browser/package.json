@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "run-p start:backend start:react",
-    "start:backend": "json-server backend/db.json",
+    "start:backend": "node backend/server.js",
     "start:react": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
