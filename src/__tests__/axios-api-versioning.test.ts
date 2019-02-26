@@ -63,8 +63,8 @@ describe('Testing correct return value of withVersioning() using NO global versi
         expect(instance.defaults['apiVersion']).toBe(undefined)
     })
 
-    test('it should not add "versioningStrategy" to instance defaults', () => {
-        expect(instance.defaults['versioningStrategy']).toBe(undefined)
+    test('it should correctly add "versioningStrategy" to instance defaults', () => {
+        expect(instance.defaults['versioningStrategy']).toBe(VersioningStrategy.QueryString)
     })
 
     test('it should correctly add "ApiVersioningInterceptor" to instance interceptors', () => {
@@ -91,7 +91,6 @@ describe('Testing correct return value of withVersioning() using a global versio
         expect(instance.defaults['versioningStrategy']).toBe(testVersioningConfig.versioningStrategy)
     })
 
-
     test('it should correctly add "ApiVersioningInterceptor" to instance interceptors', () => {
         // @ts-ignore
         // we directly check the length of the handlers array for the request interceptors
@@ -112,8 +111,8 @@ describe('Testing correct return value of withVersioning() using NO global versi
         expect(instance.defaults['apiVersion']).toBe(undefined)
     })
 
-    test('it should not add "versioningStrategy" to instance defaults', () => {
-        expect(instance.defaults['versioningStrategy']).toBe(undefined)
+    test('it should correctly add "versioningStrategy" to instance defaults', () => {
+        expect(instance.defaults['versioningStrategy']).toBe(VersioningStrategy.QueryString)
     })
 
     test('it should correctly add "ApiVersioningInterceptor" to instance interceptors', () => {
