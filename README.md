@@ -57,6 +57,10 @@ But the usage of `axios-api-versioning` is what matters.
 
 [Learn more here](./sandbox/browser/README.md)
 
-# License
+## Changelog
+
+You can view the changelog [here](./CHANGELOG.md).
+
+## License
 
 MIT
