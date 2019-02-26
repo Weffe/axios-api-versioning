@@ -1,36 +1,34 @@
-import { AxiosInstance, AxiosStatic } from 'axios';
+import axios, { AxiosInstance, AxiosStatic } from 'axios';
 import { AxiosWithVersioning, IWithVersioningConfig } from './types'
 import { injectApiVersioningInterceptor } from './axios-api-versioning-interceptor'
-import cloneDeep from 'lodash.clonedeep'
+import { defaultWithVersioningConfig } from './defaultConfig';
 
-export function withVersioning(instance: AxiosInstance | AxiosStatic, config?: IWithVersioningConfig) {
-    let axiosWithVersioning = cloneDeep(instance);
+export function withVersioning(instance: AxiosInstance | AxiosStatic, config: IWithVersioningConfig = defaultWithVersioningConfig) {
+    // deep clone the instance so we don't affect it in any way
+    let clonedInstance = axios.create(instance.defaults);
 
-    if (config) {
-        let value: any;
+    // set up for modifying the instance.defaults object
+    let value: any = {
+        versioningStrategy: config.versioningStrategy
+    };
 
-        if (config.apiVersion) {
-            value = {
-                ...axiosWithVersioning.defaults,
-                versioningStrategy: config.versioningStrategy,
-                apiVersion: config.apiVersion
-            };
-        }
-        else {
-            value = {
-                ...axiosWithVersioning.defaults,
-                versioningStrategy: config.versioningStrategy,
-            };
-        }
-
-        // set default apiVersion
-        axiosWithVersioning = Object.defineProperty(axiosWithVersioning, 'defaults', {
-            value,
-            configurable: true,
-        })
+    if (config.apiVersion) {
+        value['apiVersion'] = config.apiVersion;
     }
 
-    axiosWithVersioning = injectApiVersioningInterceptor(axiosWithVersioning as AxiosWithVersioning);
+    value = {
+        ...clonedInstance.defaults,
+        ...value
+    }
 
-    return axiosWithVersioning as AxiosWithVersioning;
+    // set defaults property to new defaults w/ apiVersion and versioningStrategy
+    Object.defineProperty(clonedInstance, 'defaults', {
+        value,
+        configurable: true,
+    })
+
+    // add required api versioning interceptor
+    injectApiVersioningInterceptor(clonedInstance as AxiosWithVersioning);
+
+    return clonedInstance as AxiosWithVersioning;
 }

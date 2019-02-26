@@ -45,9 +45,6 @@ export function injectApiVersioningInterceptor(instance: AxiosWithVersioning) {
     // add an interceptor
     instance.interceptors.request.use(config => {
         const enhancedConfig = enhanceConfigByVersioningStrategy(instance, config);
-
         return enhancedConfig;
     });
-
-    return instance;
 }
