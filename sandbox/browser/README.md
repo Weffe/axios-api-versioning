@@ -50,5 +50,5 @@ yarn start
 
 ## Overview
 
-This is a sample sanbox project that shows real usage of how you could integrate `axios-api-versioning` in your project.
-Even though it is a React App, the same structure inside `api.ts` can be used as inspiration in your own projects.
+This is a sample sandbox project that shows real usage of how you could integrate `axios-api-versioning` in your project.
+Even though it is a React App, the same structure inside `src/api.ts` can be used as inspiration in your own projects.
