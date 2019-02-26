@@ -20,6 +20,7 @@ export class App extends React.Component<object, IAppState> {
   public handleSubmit = async (request: AxiosPromise) => {
     try {
       const res = await request;
+
       this.setState({
         responseData: res.data,
         hasError: false,
@@ -36,6 +37,7 @@ export class App extends React.Component<object, IAppState> {
       console.info('Printing request headers...')
       console.info(error.config.headers)
       console.groupEnd();
+
       this.setState({
         responseData: [],
         hasError: true,
@@ -51,7 +53,8 @@ export class App extends React.Component<object, IAppState> {
       <pre className="mt-3 text-grey-lighter">
         {(responseData.length > 0)
           ? JSON.stringify(responseData, null, 2)
-          : 'No Response Data...'}
+          : 'No Response Data...'
+        }
       </pre>
     </div>
   )
@@ -77,7 +80,8 @@ export class App extends React.Component<object, IAppState> {
       <span className="m-2 p-2 bg-white text-blue-dark border border-grey-light">
         {acceptHeader
           ? acceptHeader
-          : 'empty...'}
+          : 'empty...'
+        }
       </span>
     </div>
   )

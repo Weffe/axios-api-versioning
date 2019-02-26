@@ -1,38 +1,37 @@
 
 const jsonServer = require('json-server')
 const server = jsonServer.create()
-const router = jsonServer.router('./db.json')
+const data = require('./db.json');
+const router = jsonServer.router(data)
 const middlewares = jsonServer.defaults()
-const data = require('./db.json')
+const routes = require('./routes.json');
 
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares)
 
-// Add custom routes before JSON Server router
-server.get('/echo', (req, res) => {
-    res.jsonp(req.query)
-})
-
 // To handle POST, PUT and PATCH you need to use a body-parser
 // You can use the one used by JSON Server
 server.use(jsonServer.bodyParser)
-server.use((req, res, next) => {
+server.use(jsonServer.rewriter(routes))
+
+server.get('/books', (req, res, next) => {
     const acceptHeader = req.header('Accept');
     const apiVersion = acceptHeader.split(';')[1] || undefined;
+    const rawApiVersion = apiVersion.replace('v=', '');
 
-    if (req.method === 'GET' && apiVersion !== undefined) {
-        // const resData = data[`books-v${apiVersion}`];
+    if (rawApiVersion !== undefined) {
+        const resData = data[`books-v${rawApiVersion}`];
 
-        res.status(200).send('Media Type!');
+        res.status(200).send(resData);
     }
     else {
-        // Continue to JSON Server router
-        next()
+        next();
     }
 })
+
 
 // Use default router
 server.use(router)
 server.listen(4000, () => {
-    console.log('JSON Server is running')
+    console.log('JSON Server is running on port 4000.')
 })

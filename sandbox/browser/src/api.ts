@@ -7,6 +7,14 @@ const axiosInstance = axios.create({
 
 const client = withVersioning(axiosInstance);
 
+/**
+ * here we manually set the apiVersion & versioningStrategy on every request
+ * as to override any default setting.
+ * 
+ * If you have an app where you don't need to mix api versions,
+ * then set your active version inside the withVersioning()
+ */
+
 export function getBooksByQueryString(apiVersion: string) {
     return client.get('books', {
         apiVersion,

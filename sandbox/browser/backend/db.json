@@ -19,5 +19,17 @@
                 "api-version": "2"
             }
         }
+    ],
+    "books-v3": [
+        {
+            "id": 1,
+            "title": "Judgment Crimes",
+            "author": "John Doe",
+            "publisher": "ABC Writers",
+            "awards": "Best Seller",
+            "meta": {
+                "api-version": "3"
+            }
+        }
     ]
 }

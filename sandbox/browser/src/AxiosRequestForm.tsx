@@ -8,7 +8,7 @@ interface IAxiosRequestFormProps {
 }
 
 interface IAxiosRequestFormState {
-    apiVersion: '1' | '2';
+    apiVersion: '1' | '2' | '3';
     versioningStrategy: VersioningStrategy
 }
 
@@ -67,7 +67,7 @@ export class AxiosRequestForm extends React.Component<IAxiosRequestFormProps, IA
                                 htmlFor="api-version"
                                 className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
                                 Api Version
-                         </label>
+                            </label>
                             <div className="relative">
                                 <select
                                     id="api-version"
@@ -76,6 +76,7 @@ export class AxiosRequestForm extends React.Component<IAxiosRequestFormProps, IA
                                     onChange={this.updateSelectValue('apiVersion')}>
                                     <option value="1">Version 1</option>
                                     <option value="2">Version 2</option>
+                                    <option value="3">Version 3</option>
                                 </select>
                                 <div className="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
                                     <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
