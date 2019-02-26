@@ -2,22 +2,53 @@
 
 This is a sandbox project for showcasing the use of `axios-api-versioning` in a browser.
 
+![Screencast Demo](./screencast-demo.gif)
+
 ## Quick Start
 
-1. Install Dependencies
+> Make sure you are inside the `sandbox/browser` folder before running any commands.
 
-`npm install`
+### 1. Install Dependencies
 
-or 
+<details open>
+<summary>npm</summary>
 
-`yarn install`
+```bash
+npm install
+```
+</details>
 
-2. Start the dev server
+<details open>
+<summary>yarn</summary>
 
-`npm start`
+```bash
+yarn install
+```
+</details>
 
-or 
+### 2. Start the dev server
 
-`yarn start`
+<details open>
+<summary>npm</summary>
 
-3. Visit http://localhost:3000 
+```bash
+npm start
+```
+</details>
+
+<details open>
+<summary>yarn</summary>
+
+```bash
+yarn start
+```
+</details>
+
+### 3. Visit http://localhost:3000 
+
+> The react app should automatically open in your browser but if it doesn't then visit the url manually.
+
+## Overview
+
+This is a sample sanbox project that shows real usage of how you could integrate `axios-api-versioning` in your project.
+Even though it is a React App, the same structure inside `api.ts` can be used as inspiration in your own projects.
