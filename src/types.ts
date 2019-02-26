@@ -1,14 +1,14 @@
 import { AxiosInstance, AxiosStatic } from 'axios';
 
-type InstanceType = AxiosInstance | AxiosStatic;
-export type AxiosWithVersioning = InstanceType & IWithVersioning;
-
-interface IWithVersioning {
+type AxiosType = AxiosInstance | AxiosStatic;
+type WithVersioning = {
     defaults: {
         apiVersion: string;
         versioningStrategy: VersioningStrategy;
     }
 }
+
+export type AxiosWithVersioning = AxiosType & WithVersioning;
 
 export enum VersioningStrategy {
     QueryString = 'QUERY_STRING',
@@ -16,9 +16,14 @@ export enum VersioningStrategy {
     MediaType = 'MEDIA_TYPE'
 }
 
-export interface IWithVersioningConfig {
-    apiVersion?: string;
+export interface IVersioningConfig {
     versioningStrategy: VersioningStrategy;
+    mediaTypeKeyName: string;
+    queryStringKeyName: string;
+}
+
+export interface IWithVersioningConfig extends PickPartial<IVersioningConfig, "mediaTypeKeyName" | "queryStringKeyName"> {
+    apiVersion?: string;
 }
 
 /**
@@ -31,3 +36,7 @@ declare module "axios" {
         versioningStrategy?: string
     }
 }
+
+// type helper
+// @see https://stackoverflow.com/a/53742583
+type PickPartial<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>> & Partial<Pick<T, K>>
