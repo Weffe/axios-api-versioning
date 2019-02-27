@@ -3,8 +3,11 @@
     - [More Resources](more-resources.md)
 - Examples
     - [Basic Usage](examples/basic-usage.md)
+    - [Versioning Strategy](examples/versioning-strategy.md)
     - [Providing a config to `withVersioning`](examples/providing-with-versioning-config.md)
     - [Using `axios.create()`](examples/using-axios-create.md)
+    - [Set Custom Key Name](examples/set-custom-key-name.md)
+    - [Overriding API Config](examples/overriding-api-config.md)
     - [Mixing API Versions](examples/mixing-api-versions.md)
 - API
     - [`withVersioning()`](api/withVersioning.md)
