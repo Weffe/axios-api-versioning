@@ -1,4 +1,20 @@
-- Getting started
-  - [Quick start](quickstart.md)
-
+- Getting Started
+    - [Quick Start](quick-start.md)
+    - [Default Config Values](default-config-values.md)
+    - [More Resources](more-resources.md)
+- Guides
+    - [Basic Usage](guides/basic-usage.md)
+    - [Versioning Strategy](guides/versioning-strategy.md)
+    - [Providing a config to `withVersioning`](guides/providing-with-versioning-config.md)
+    - [Using `axios.create()`](guides/using-axios-create.md)
+    - [Set Custom Key Name](guides/set-custom-key-name.md)
+    - [Overriding API Config](guides/overriding-api-config.md)
+    - [Mixing API Versions](guides/mixing-api-versions.md)
+- API
+    - [`withVersioning()`](api/withVersioning.md)
+    - Types
+        - [`VersioningStrategy`](api/types/VersioningStrategy.md)
+        - [`MediaTypeFormatterFn`](api/types/MediaTypeFormatterFn.md)
+        - [`IWithVersioningConfig`](api/types/IWithVersioningConfig.md)
+        - [`AxiosWithVersioning`](api/types/AxiosWithVersioning.md)
 - [Changelog](https://github.com/Weffe/axios-api-versioning/blob/master/CHANGELOG.md)

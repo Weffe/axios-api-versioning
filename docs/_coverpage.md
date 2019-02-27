@@ -1,12 +1,11 @@
 # axios-api-versioning
 
-> Add easy to manage api versioning to Axios
+> Add easy to manage api versioning to [axios](https://github.com/axios/axios)
 
-- Simple and lightweight
-- Supports multiple versioning strategies:
-- Query String
-- Url Path
-- Media Type
+- Easily configurable
+- Straightforward API
+- Supports multiple versioning strategies
+- TypeScript Support
 
 [GitHub](https://github.com/Weffe/axios-api-versioning)
-[Get Started](#getting-started)
+[Learn More](#welcome)
