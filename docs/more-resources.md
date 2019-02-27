@@ -4,8 +4,8 @@ In case you are interested in learning more about this project. Then, here are a
 
 ## Browse the docs
 
-- [Explore examples](examples/basic-usage.md)
-- Look at the API reference
+- [Explore guides](guides/basic-usage.md)
+- [Look at the API reference](api/withVersioning.md)
 
 ## Found a bug? Have a question?
 

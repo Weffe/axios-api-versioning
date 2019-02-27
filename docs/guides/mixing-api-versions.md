@@ -31,7 +31,7 @@ Then, just replace the `clientV1` calls with `clientV2`!
 
 ## Second Option
 
-If you just need to quickly set the different `apiVersion`, then follow the guide for [Overriding Api Config](examples/overriding-api-config.md).
+If you just need to quickly set the different `apiVersion`, then follow the guide for [Overriding Api Config](guides/overriding-api-config.md).
 
 tl;dr
 

@@ -44,3 +44,31 @@ const client = withVersioning(baseClient, {
 client.get('/posts');
 ```
 </details>
+
+## Usage with `VersioningStrategy.UrlPath`
+
+You can take advantage of the `baseURL` property in the `axios` config to set where your `apiVersion` will be set.
+
+```javascript
+import axios from 'axios';
+import { withVersioning, VersioningStrategy } from 'axios-api-versioning';
+
+const baseClient = axios.create({
+    baseURL: 'http://example.com/api/v{apiVersion}',
+    timeout: 5000,
+})
+
+// setting a different default Versioning Strategy
+const client = withVersioning(baseClient, {
+    apiVersion: '1',
+    versioningStrategy: VersioningStrategy.UrlPath
+});
+
+client.get('/posts');
+```
+
+The url of the **get** request will look like:
+
+```http
+http://example.com/api/v1/posts
+```
