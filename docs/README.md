@@ -1,6 +1,6 @@
 # Welcome
 
-Here, you can find an assortment of examples and documentation on how to use `axios-api-versioning`.
+Here, you can find an assortment of guides and documentation on how to use `axios-api-versioning`.
 
 ## What is it?
 

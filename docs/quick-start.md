@@ -23,7 +23,7 @@ yarn add axios-api-versioning
 
 ```javascript
 import axios from 'axios';
-import { withVersioning, VersioningStrategy } from 'axios-api-versioning'
+import { withVersioning, VersioningStrategy } from 'axios-api-versioning';
 
 // create an axios instance with versioning
 // and supply optional default options
