@@ -16,7 +16,7 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "clean": "rimraf dist/",
     "release": "standard-version",
-    "serve:docs": "docsify serve docs",
+    "docs": "docsify serve docs -o --port 2065",
     "test": "jest"
   },
   "keywords": [
