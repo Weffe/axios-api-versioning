@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.1.0](https://github.com/Weffe/axios-api-versioning/compare/v1.0.0...v1.1.0) (2019-02-27)
+
+
+### Features
+
+* add mediaTypeFormatter for manual formatting of Accept Header ([7827b58](https://github.com/Weffe/axios-api-versioning/commit/7827b58))
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 # 1.0.0 (2019-02-26)
 
 
