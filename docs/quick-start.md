@@ -6,7 +6,7 @@
 <summary>npm</summary>
 
 ```bash
-npm i --save axios-api-versioning
+npm install --save axios-api-versioning
 ```
 </details>
 
