@@ -1,2 +1,2 @@
 export { withVersioning } from './axios-api-versioning';
-export { VersioningStrategy, IWithVersioningConfig } from './types';
+export { VersioningStrategy, IWithVersioningConfig, MediaTypeFormatterFn } from './types';

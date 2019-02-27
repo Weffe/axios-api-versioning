@@ -16,13 +16,21 @@ export enum VersioningStrategy {
     MediaType = 'MEDIA_TYPE'
 }
 
+export type MediaTypeFormatterFn = (data: {
+    apiVersion: string,
+    mediaTypeKeyName: string,
+    acceptHeader: string
+}) => string;
+
 export interface IVersioningConfig {
     versioningStrategy: VersioningStrategy;
     mediaTypeKeyName: string;
     queryStringKeyName: string;
+    mediaTypeFormatter?: MediaTypeFormatterFn;
 }
 
-export interface IWithVersioningConfig extends PickPartial<IVersioningConfig, "mediaTypeKeyName" | "queryStringKeyName"> {
+export interface IWithVersioningConfig
+    extends PickPartial<IVersioningConfig, "mediaTypeKeyName" | "queryStringKeyName"> {
     apiVersion?: string;
 }
 

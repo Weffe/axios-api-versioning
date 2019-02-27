@@ -26,11 +26,25 @@ function enhanceConfigByVersioningStrategy(instance: AxiosWithVersioning, reques
     }
 
     if (versioningStrategy === VersioningStrategy.MediaType) {
-        const defaultAcceptHeader = requestConfig.headers.common["Accept"] || '';
+        const acceptHeader = requestConfig.headers.common["Accept"] || '';
 
-        requestConfig.headers = {
-            ...requestConfig.headers,
-            ["Accept"]: defaultAcceptHeader + `;${versioningConfig.mediaTypeKeyName}=${apiVersion}`
+        if (versioningConfig.mediaTypeFormatter) {
+            const formattedAcceptHeader = versioningConfig.mediaTypeFormatter({
+                apiVersion,
+                acceptHeader,
+                mediaTypeKeyName: versioningConfig.mediaTypeKeyName
+            })
+
+            requestConfig.headers = {
+                ...requestConfig.headers,
+                ["Accept"]: formattedAcceptHeader
+            }
+        }
+        else {
+            requestConfig.headers = {
+                ...requestConfig.headers,
+                ["Accept"]: acceptHeader + `;${versioningConfig.mediaTypeKeyName}=${apiVersion}`
+            }
         }
     }
 
