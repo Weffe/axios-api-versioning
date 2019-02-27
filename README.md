@@ -3,7 +3,7 @@
 [![npm version](http://img.shields.io/npm/v/axios-api-versioning.svg)](https://npmjs.org/package/axios-api-versioning "View this project on npm")
 [![Greenkeeper badge](https://badges.greenkeeper.io/Weffe/axios-api-versioning.svg)](https://greenkeeper.io/)
 
-Add easy to manage api versioning to Axios
+Add easy to manage api versioning to [axios](https://github.com/axios/axios)
 
 ## Quick Start
 
@@ -25,11 +25,12 @@ yarn add axios-api-versioning
 ```
 </details>
 
-### Usage
+### Example Usage
+
 
 ```javascript
 import axios from 'axios';
-import { withVersioning, VersioningStrategy } from 'axios-api-versioning'
+import { withVersioning, VersioningStrategy } from 'axios-api-versioning';
 
 // create an axios instance with versioning
 // and supply optional default options
