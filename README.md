@@ -47,6 +47,10 @@ client.get('http://example.com', {
 })
 ```
 
+## TypeScript Support
+
+TypeScript is supported! There's no need to install types for this package from the `@types` repository as they are provided by this package directly.
+
 ## Documentation
 
 You can visit the online docs here: https://weffe.github.io/axios-api-versioning
