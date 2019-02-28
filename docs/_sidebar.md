@@ -1,5 +1,6 @@
 - Getting Started
     - [Quick Start](quick-start.md)
+    - [TypeScript Support](typescript-support.md)
     - [Default Config Values](default-config-values.md)
     - [More Resources](more-resources.md)
 - Guides
