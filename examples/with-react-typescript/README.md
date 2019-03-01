@@ -1,12 +1,12 @@
 # Browser Sandbox
 
-This is a sandbox project for showcasing the use of `axios-api-versioning` in a browser.
+This example shows how you can use `axios-api-versioning` in a React App.
 
 ![Screencast Demo](./screencast-demo.gif)
 
 ## Quick Start
 
-> Make sure you are inside the `sandbox/browser` folder before running any commands.
+> Make sure you are inside the `examples/with-react-typescript` folder before running any commands.
 
 ### 1. Install Dependencies
 
