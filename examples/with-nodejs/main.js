@@ -1,3 +1,5 @@
+const chalk = require('chalk');
+const { startBackendServer } = require('./backend/server');
 const {
     getBooksByMediaType,
     getBooksByQueryString,
@@ -8,9 +10,6 @@ const {
     print_getBooksByMediaType,
     print_getBooksByUrlPath
 } = require('./print');
-const chalk = require('chalk');
-var util = require('util')
-const { startBackendServer } = require('./backend/server');
 
 async function main() {
     const server = startBackendServer();
