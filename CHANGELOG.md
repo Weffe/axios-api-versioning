@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.1](https://github.com/Weffe/axios-api-versioning/compare/v1.1.0...v1.1.1) (2019-03-01)
+
+
+### Bug Fixes
+
+* properly let users override the Accept header in the req config ([f12e7b8](https://github.com/Weffe/axios-api-versioning/commit/f12e7b8))
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 # [1.1.0](https://github.com/Weffe/axios-api-versioning/compare/v1.0.0...v1.1.0) (2019-02-27)
 
 
