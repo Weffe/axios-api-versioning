@@ -55,12 +55,13 @@ TypeScript is supported! There's no need to install types for this package from 
 
 You can visit the online docs here: https://weffe.github.io/axios-api-versioning
 
-## Sandbox - Browser
+## Example Projects
 
-There is a sandbox example project showcasing the usage in a browser, namely a React App.
-But the usage of `axios-api-versioning` is what matters. 
+There are 2 example projects showcasing the usage of `axios-api-versioning`. 
+You can check them out here:
 
-[Learn more here](./sandbox/browser/README.md)
+1. [with-nodejs](./examples/with-nodejs)
+2. [with-react-typescript](./examples/with-react-typescript)
 
 ## Changelog
 
