@@ -15,8 +15,8 @@ const baseClient = axios.create({
     timeout: 5000,
 })
 
-// setting a different default Versioning Strategy
 const client = withVersioning(baseClient, {
+    apiVersion: '1',
     versioningStrategy: VersioningStrategy.MediaType
 });
 
@@ -36,8 +36,8 @@ const baseClient = axios.create({
     timeout: 5000,
 })
 
-// setting a different default Versioning Strategy
 const client = withVersioning(baseClient, {
+    apiVersion: '1',
     versioningStrategy: VersioningStrategy.MediaType
 });
 
@@ -58,7 +58,6 @@ const baseClient = axios.create({
     timeout: 5000,
 })
 
-// setting a different default Versioning Strategy
 const client = withVersioning(baseClient, {
     apiVersion: '1',
     versioningStrategy: VersioningStrategy.UrlPath

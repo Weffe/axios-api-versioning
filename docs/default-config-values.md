@@ -12,7 +12,6 @@ default values are.
 import { IWithVersioningConfig, VersioningStrategy }  from 'axios-api-versioning`;
 
 const defaultWithVersioningConfig: IWithVersioningConfig = {
-    versioningStrategy: VersioningStrategy.QueryString,
     mediaTypeKeyName: 'v',
     queryStringKeyName: 'api-version',
 }

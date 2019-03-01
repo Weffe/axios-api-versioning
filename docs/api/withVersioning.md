@@ -8,7 +8,7 @@ import { AxiosInstance, AxiosStatic } from 'axios';
 function withVersioning(
     instance: AxiosInstance | AxiosStatic,
     config?: IWithVersioningConfig
-): AxiosWithVersioning
+): AxiosInstanceWithVersioning
 ```
 
 ## Type References
@@ -16,4 +16,4 @@ function withVersioning(
 Here are some quick links to the types that are used in `withVersioning()`.
 
 - [IWithVersioningConfig](api/types/IWithVersioningConfig.md)
-- [AxiosWithVersioning](api/types/AxiosWithVersioning.md)
+- [AxiosInstanceWithVersioning](api/types/AxiosInstanceWithVersioning.md)

@@ -7,10 +7,14 @@ Here is an example of very basic usage. It demonstrates creating an axios instan
 
 ```javascript
 import axios from 'axios';
-import { withVersioning } from 'axios-api-versioning';
+import { withVersioning, VersioningStrategy } from 'axios-api-versioning';
 
-// Note: The default VersioningStrategy is QueryString
-const client = withVersioning(axios);
+const config = {
+    apiVersion: '1',
+    versioningStrategy: VersioningStrategy.QueryString
+}
+
+const client = withVersioning(axios, config);
 
 client.get('http://example.com');
 ```
@@ -21,10 +25,14 @@ client.get('http://example.com');
 
 ```typescript
 import axios from 'axios';
-import { withVersioning } from 'axios-api-versioning';
+import { withVersioning, VersioningStrategy, IWithVersioningConfig } from 'axios-api-versioning';
 
-// Note: The default VersioningStrategy is QueryString
-const client = withVersioning(axios);
+const config: IWithVersioningConfig = {
+    apiVersion: '1',
+    versioningStrategy: VersioningStrategy.QueryString
+}
+
+const client = withVersioning(axios, config);
 
 client.get('http://example.com');
 ```
