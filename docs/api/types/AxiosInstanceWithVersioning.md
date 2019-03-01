@@ -1,0 +1,26 @@
+# `AxiosInstanceWithVersioning`
+
+> [!NOTE]
+> Exported for public use? **No**
+
+```typescript
+import { AxiosPromise, AxiosInterceptorManager } from 'axios';
+
+interface AxiosInstanceWithVersioning {
+    (config: AxiosRequestConfigWithVersioning): AxiosPromise;
+    (url: string, config?: AxiosRequestConfigWithVersioning): AxiosPromise;
+    defaults: AxiosRequestConfigWithVersioning;
+    interceptors: {
+        request: AxiosInterceptorManager<AxiosRequestConfigWithVersioning>;
+        response: AxiosInterceptorManager<AxiosResponseWithVersioning>;
+    };
+    getUri(config?: AxiosRequestConfigWithVersioning): string;
+    request<T = any, R = AxiosResponseWithVersioning<T>>(config: AxiosRequestConfigWithVersioning): Promise<R>;
+    get<T = any, R = AxiosResponseWithVersioning<T>>(url: string, config?: AxiosRequestConfigWithVersioning): Promise<R>;
+    delete<T = any, R = AxiosResponseWithVersioning<T>>(url: string, config?: AxiosRequestConfigWithVersioning): Promise<R>;
+    head<T = any, R = AxiosResponseWithVersioning<T>>(url: string, config?: AxiosRequestConfigWithVersioning): Promise<R>;
+    post<T = any, R = AxiosResponseWithVersioning<T>>(url: string, data?: any, config?: AxiosRequestConfigWithVersioning): Promise<R>;
+    put<T = any, R = AxiosResponseWithVersioning<T>>(url: string, data?: any, config?: AxiosRequestConfigWithVersioning): Promise<R>;
+    patch<T = any, R = AxiosResponseWithVersioning<T>>(url: string, data?: any, config?: AxiosRequestConfigWithVersioning): Promise<R>;
+}
+```

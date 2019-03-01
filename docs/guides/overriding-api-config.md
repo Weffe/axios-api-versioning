@@ -1,5 +1,7 @@
 # Overriding API Config
 
+## Per Request
+
 You have the ability to override `apiVersion` and `versioningStrategy` on a per request basis.
 
 This can be accomplished by so:

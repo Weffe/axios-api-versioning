@@ -1,7 +1,6 @@
-import { IWithVersioningConfig, VersioningStrategy } from './types';
+import { IVersioningConfig, PickPartial } from './types';
 
-export const defaultWithVersioningConfig: IWithVersioningConfig = {
-    versioningStrategy: VersioningStrategy.QueryString,
+export const defaultWithVersioningConfig: PickPartial<IVersioningConfig, "apiVersion" | "versioningStrategy"> = {
     mediaTypeKeyName: 'v',
     queryStringKeyName: 'api-version',
 }
