@@ -7,6 +7,14 @@ In case you are interested in learning more about this project. Then, here are a
 - [Explore guides](guides/basic-usage.md)
 - [Look at the API reference](api/withVersioning.md)
 
+## Explore examples
+
+There are 2 example projects showcasing the usage of `axios-api-versioning`. 
+You can check them out here:
+
+1. [with-nodejs](https://github.com/Weffe/axios-api-versioning/tree/master/examples/with-nodejs)
+2. [with-react-typescript](https://github.com/Weffe/axios-api-versioning/tree/master/examples/with-react-typescript)
+
 ## Found a bug? Have a question?
 
 If you found a bug or simply have a question on how to set something up, then head over to our [GitHub Issues Page](https://github.com/Weffe/axios-api-versioning/issues).
