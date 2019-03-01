@@ -92,7 +92,7 @@ export class App extends React.Component<object, IAppState> {
     return (
       <>
         <section>
-          <h2>How to use this sandbox?</h2>
+          <h2>How to use this?</h2>
           <ol className="my-3">
             <li>Select the api version of the backend</li>
             <li>Select the versioning strategy</li>

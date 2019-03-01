@@ -2,7 +2,7 @@
 
 This example shows how you can use `axios-api-versioning` in a React App.
 
-![Screencast Demo](./screencast-demo.gif)
+![Demo](./demo.gif)
 
 ## Quick Start
 
