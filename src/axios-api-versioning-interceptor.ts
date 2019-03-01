@@ -1,22 +1,20 @@
-import { AxiosRequestConfig } from 'axios';
-import { AxiosWithVersioning, VersioningStrategy, IVersioningConfig } from './types'
+import { AxiosInstance } from 'axios';
+import { VersioningStrategy, IVersioningConfig, } from './types'
+import { AxiosRequestConfigWithVersioning } from './axios.types';
 
 function replaceUrlPathWithVersion(url: string, apiVersion: string) {
     // the template name of the api version must be "apiVersion"
     return url.replace('{apiVersion}', apiVersion);
 }
 
-function enhanceConfigByVersioningStrategy(instance: AxiosWithVersioning, requestConfig: AxiosRequestConfig, versioningConfig: IVersioningConfig): AxiosRequestConfig {
-    if (instance.defaults.hasOwnProperty('apiVersion') === false && requestConfig['apiVersion'] === undefined) {
-        return requestConfig;
-    }
+function enhanceConfigByVersioningStrategy(requestConfig: AxiosRequestConfigWithVersioning, versioningConfig: IVersioningConfig): AxiosRequestConfigWithVersioning {
 
     // we prioritize the apiVersion passed via the RequestConfig first
-    // then use the global default apiVersion last
-    const apiVersion = requestConfig['apiVersion'] || instance.defaults['apiVersion'];
+    // then use the initial versioningConfig last
+    const apiVersion = requestConfig['apiVersion'] || versioningConfig['apiVersion'];
 
-    // same way here, we prioritize the RequestConfig first then the global defaults
-    const versioningStrategy = requestConfig['versioningStrategy'] || instance.defaults['versioningStrategy'];
+    // same way here, we prioritize the RequestConfig first then the initial defaults
+    const versioningStrategy = requestConfig['versioningStrategy'] || versioningConfig['versioningStrategy'];
 
     if (versioningStrategy === VersioningStrategy.QueryString) {
         requestConfig.params = {
@@ -60,10 +58,10 @@ function enhanceConfigByVersioningStrategy(instance: AxiosWithVersioning, reques
     return requestConfig;
 }
 
-export function injectApiVersioningInterceptor(instance: AxiosWithVersioning, versioningConfig: IVersioningConfig) {
+export function injectApiVersioningInterceptor(instance: AxiosInstance, versioningConfig: IVersioningConfig) {
     // add an interceptor
-    instance.interceptors.request.use((requestConfig) => {
-        const enhancedConfig = enhanceConfigByVersioningStrategy(instance, requestConfig, versioningConfig);
+    instance.interceptors.request.use((requestConfig: AxiosRequestConfigWithVersioning) => {
+        const enhancedConfig = enhanceConfigByVersioningStrategy(requestConfig, versioningConfig);
         return enhancedConfig;
     });
 }
