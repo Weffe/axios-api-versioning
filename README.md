@@ -67,6 +67,10 @@ You can check them out here:
 
 You can view the changelog [here](./CHANGELOG.md).
 
+## Related Projects
+
+- https://github.com/Microsoft/aspnet-api-versioning
+
 ## License
 
 MIT
