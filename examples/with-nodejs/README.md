@@ -2,6 +2,8 @@
 
 This example shows how you could use `axios-api-versioning` in NodeJS.
 
+![Demo](./demo.svg)
+
 ## Quick Start
 
 > Make sure you are inside the `examples/with-nodejs` folder before running any commands.
