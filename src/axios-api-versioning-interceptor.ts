@@ -26,7 +26,12 @@ function enhanceConfigByVersioningStrategy(instance: AxiosWithVersioning, reques
     }
 
     if (versioningStrategy === VersioningStrategy.MediaType) {
-        const acceptHeader = requestConfig.headers.common["Accept"] || '';
+        const defaultAcceptHeader: string = requestConfig.headers.common["Accept"];
+        const reqAcceptHeader: string | undefined = requestConfig.headers["Accept"] || undefined;
+
+        // we prioritize an accept header passed in the RequestConfig but default to the
+        // the common default accept header value axios provides
+        const acceptHeader = reqAcceptHeader || defaultAcceptHeader;
 
         if (versioningConfig.mediaTypeFormatter) {
             const formattedAcceptHeader = versioningConfig.mediaTypeFormatter({
