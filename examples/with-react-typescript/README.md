@@ -1,4 +1,4 @@
-# Browser Sandbox
+# Example: with-react-typescript
 
 This example shows how you can use `axios-api-versioning` in a React App.
 
