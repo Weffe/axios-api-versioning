@@ -1,0 +1,35 @@
+{
+    "books-v1": [
+        {
+            "id": 1,
+            "title": "Judgment Crimes",
+            "author": "John Doe",
+            "meta": {
+                "api-version": "1"
+            }
+        }
+    ],
+    "books-v2": [
+        {
+            "id": 1,
+            "title": "Judgment Crimes",
+            "author": "John Doe",
+            "publisher": "ABC Writers",
+            "meta": {
+                "api-version": "2"
+            }
+        }
+    ],
+    "books-v3": [
+        {
+            "id": 1,
+            "title": "Judgment Crimes",
+            "author": "John Doe",
+            "publisher": "ABC Writers",
+            "awards": "Best Seller",
+            "meta": {
+                "api-version": "3"
+            }
+        }
+    ]
+}
