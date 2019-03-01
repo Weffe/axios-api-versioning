@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "axios-api-versioning": "~1.1.0"
+    "axios-api-versioning": "~2.0.0"
   },
   "devDependencies": {
     "chalk": "^2.4.2",
