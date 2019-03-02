@@ -14,6 +14,7 @@
     "build": "run-s clean build:cjs build:esm",
     "build:cjs": "tsc",
     "build:esm": "tsc -p tsconfig.esm.json",
+    "sandbox": "tsc -p sandbox/tsconfig.sandbox.json",
     "clean": "rimraf dist/",
     "release": "standard-version",
     "docs": "docsify serve docs -o --port 2065",
