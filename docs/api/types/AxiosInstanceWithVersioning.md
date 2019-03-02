@@ -1,7 +1,16 @@
 # `AxiosInstanceWithVersioning`
 
 > [!NOTE]
-> Exported for public use? **No**
+> Exported for public use? **Yes**.
+>
+> Can be accessed with: `axios-api-versioning/dist/types/axios`
+>
+> Import Example: 
+> ```typescript
+> import { AxiosInstanceWithVersioning } from 'axios-api-versioning/dist/types/axios';
+> ```
+
+## Type Signature
 
 ```typescript
 import { AxiosPromise, AxiosInterceptorManager } from 'axios';

@@ -1,7 +1,14 @@
 # `IWithVersioningConfig`
 
 > [!NOTE]
-> Exported for public use? **Yes**
+> Exported for public use? **Yes**.
+> 
+> Import Example: 
+> ```typescript
+> import { IWithVersioningConfig } from 'axios-api-versioning';
+> ```
+
+## Type Signature
 
 ```typescript
 interface IWithVersioningConfig {

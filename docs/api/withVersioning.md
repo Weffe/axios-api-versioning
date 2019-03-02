@@ -2,6 +2,16 @@
 
 This method returns a new instance of the provided axios instance that's configured to manage api versioning.
 
+> [!NOTE]
+> Exported for public use? **Yes**.
+> 
+> Import Example: 
+> ```typescript
+> import { withVersioning } from 'axios-api-versioning';
+> ```
+
+## Type Signature
+
 ```typescript
 import { AxiosInstance, AxiosStatic } from 'axios';
 
