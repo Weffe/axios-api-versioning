@@ -1,7 +1,7 @@
 {
   "name": "axios-api-versioning",
   "author": "Rogelio Negrete (Weffe)",
-  "version": "2.0.0",
+  "version": "2.1.0-alpha.0",
   "description": "Adds api versioning for axios",
   "main": "dist/lib/index.js",
   "module": "dist/esm/index.js",
