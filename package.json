@@ -1,7 +1,7 @@
 {
   "name": "axios-api-versioning",
   "author": "Rogelio Negrete (Weffe)",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Adds api versioning for axios",
   "main": "dist/lib/index.js",
   "module": "dist/esm/index.js",
@@ -11,9 +11,11 @@
   "scripts": {
     "prestart": "run-s clean",
     "start": "tsc --watch",
-    "build": "run-s clean build:cjs build:esm",
+    "build": "run-s clean build:cjs build:esm build:types",
     "build:cjs": "tsc",
     "build:esm": "tsc -p tsconfig.esm.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "sandbox": "tsc -p sandbox/tsconfig.sandbox.json",
     "clean": "rimraf dist/",
     "release": "standard-version",
     "docs": "docsify serve docs -o --port 2065",

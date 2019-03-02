@@ -1,7 +1,14 @@
 # `VersioningStrategy`
 
 > [!NOTE]
-> Exported for public use? **Yes**
+> Exported for public use? **Yes**.
+> 
+> Import Example: 
+> ```typescript
+> import { VersioningStrategy } from 'axios-api-versioning';
+> ```
+
+## Type Signature
 
 ```typescript
 enum VersioningStrategy {

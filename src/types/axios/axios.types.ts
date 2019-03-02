@@ -48,3 +48,11 @@ export interface AxiosInstanceWithVersioning {
     put<T = any, R = AxiosResponseWithVersioning<T>>(url: string, data?: any, config?: AxiosRequestConfigWithVersioning): Promise<R>;
     patch<T = any, R = AxiosResponseWithVersioning<T>>(url: string, data?: any, config?: AxiosRequestConfigWithVersioning): Promise<R>;
 }
+
+export default interface AxiosTypes {
+    AxiosRequestConfigWithVersioning: AxiosRequestConfigWithVersioning,
+    AxiosAdapterWithVersioning: AxiosAdapterWithVersioning,
+    AxiosResponseWithVersioning: AxiosResponseWithVersioning,
+    AxiosErrorWithVersioning: AxiosErrorWithVersioning,
+    AxiosInstanceWithVersioning: AxiosInstanceWithVersioning,
+}
