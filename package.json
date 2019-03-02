@@ -11,9 +11,10 @@
   "scripts": {
     "prestart": "run-s clean",
     "start": "tsc --watch",
-    "build": "run-s clean build:cjs build:esm",
+    "build": "run-s clean build:cjs build:esm build:types",
     "build:cjs": "tsc",
     "build:esm": "tsc -p tsconfig.esm.json",
+    "build:types": "tsc -p tsconfig.types.json",
     "sandbox": "tsc -p sandbox/tsconfig.sandbox.json",
     "clean": "rimraf dist/",
     "release": "standard-version",
