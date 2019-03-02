@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosStatic } from 'axios';
-import { AxiosInstanceWithVersioning } from './axios.types';
+import { AxiosInstanceWithVersioning } from './types/axios';
 import { IWithVersioningConfig, IVersioningConfig } from './types'
 import { injectApiVersioningInterceptor } from './axios-api-versioning-interceptor'
 import { defaultWithVersioningConfig } from './defaultConfig';

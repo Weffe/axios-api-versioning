@@ -1,6 +1,6 @@
 import { AxiosInstance } from 'axios';
 import { VersioningStrategy, IVersioningConfig, } from './types'
-import { AxiosRequestConfigWithVersioning } from './axios.types';
+import { AxiosRequestConfigWithVersioning } from './types/axios';
 
 function replaceUrlPathWithVersion(url: string, apiVersion: string) {
     // the template name of the api version must be "apiVersion"
