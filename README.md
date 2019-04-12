@@ -6,6 +6,12 @@
 
 Add easy to manage api versioning to [axios](https://github.com/axios/axios)
 
+## Online Demo
+
+[![Edit axios-api-versioning browser demo](./docs/assests/browser-demo-screenshot.png)](https://codesandbox.io/s/lx83688vyq?fontsize=14&hidenavigation=1&view=preview)
+
+[Visit Online Demo](https://codesandbox.io/s/lx83688vyq?fontsize=14&hidenavigation=1&view=preview)
+
 ## Quick Start
 
 ### Install
@@ -27,7 +33,6 @@ yarn add axios-api-versioning
 </details>
 
 ### Example Usage
-
 
 ```javascript
 import axios from 'axios';
