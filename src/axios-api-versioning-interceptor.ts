@@ -53,7 +53,7 @@ function enhanceConfigByVersioningStrategy(requestConfig: AxiosRequestConfigWith
 
     if (versioningStrategy === VersioningStrategy.UrlPath) {
         requestConfig.url = replaceUrlPathWithVersion(requestConfig.url!, apiVersion);
-        requestConfig.baseURL = replaceUrlPathWithVersion(requestConfig.baseURL!, apiVersion);
+        requestConfig.baseURL = requestConfig.baseURL && replaceUrlPathWithVersion(requestConfig.baseURL!, apiVersion);
     }
 
     return requestConfig;
