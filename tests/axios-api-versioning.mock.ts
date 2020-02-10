@@ -1,9 +1,9 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import * as status from "http-status-codes";
-import { withVersioning } from "../axios-api-versioning";
-import { IWithVersioningConfig, VersioningStrategy } from "../types";
-import { AxiosInstanceWithVersioning } from "../types/axios";
+import { withVersioning } from "../src/axios-api-versioning";
+import { IWithVersioningConfig, VersioningStrategy } from "../src/types";
+import { AxiosInstanceWithVersioning } from "../src/types/axios";
 
 const test_url = "http://localhost:3000";
 const MOCK_RES = "hello_world";
@@ -76,4 +76,21 @@ describe('Testing correct response config of "UrlPath" strategy', () => {
 
     expect(url).toBe(versioned_test_url);
   });
+
+  test('it should have the "apiVersion" as a url param in the baseURL', async () => {
+    const client = axios.create({
+      baseURL: blank_test_url
+    });
+    const instance = withVersioning(client, versioningConfig);
+
+    mock = new MockAdapter(instance);
+    mock.onGet(`${versioned_test_url}/`)
+        .reply(status.OK, MOCK_RES);
+
+    const res = await instance.get('/');
+    const { baseURL } = res.config;
+
+    expect(baseURL).toBe(versioned_test_url);
+  });
+
 });
