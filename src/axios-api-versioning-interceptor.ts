@@ -52,8 +52,15 @@ function enhanceConfigByVersioningStrategy(
     }
 
     if (versioningStrategy === VersioningStrategy.UrlPath) {
-        requestConfig.url = replaceUrlPathWithVersion(requestConfig.url!, apiVersion);
-        requestConfig.baseURL = requestConfig.baseURL && replaceUrlPathWithVersion(requestConfig.baseURL!, apiVersion);
+        const { url, baseURL } = requestConfig;
+
+        if (url) {
+            requestConfig.url = replaceUrlPathWithVersion(url, apiVersion);
+        }
+
+        if (baseURL) {
+            requestConfig.baseURL = replaceUrlPathWithVersion(baseURL, apiVersion);
+        }
     }
 
     return requestConfig;
