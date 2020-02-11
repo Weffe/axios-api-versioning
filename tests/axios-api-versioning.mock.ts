@@ -83,7 +83,7 @@ describe('Testing correct response config of "UrlPath" strategy', () => {
         });
         const instance = withVersioning(client, versioningConfig);
 
-        mock = new MockAdapter(instance);
+        mock = new MockAdapter(instance as AxiosInstance);
         mock.onGet(`${versioned_test_url}/`).reply(status.OK, MOCK_RES);
 
         const res = await instance.get('/');
