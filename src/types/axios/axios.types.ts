@@ -1,11 +1,6 @@
 // Matching type definitions for axios 0.18
 
-import {
-    AxiosRequestConfig,
-    AxiosPromise,
-    AxiosInterceptorManager,
-    AxiosResponse,
-} from 'axios';
+import { AxiosRequestConfig, AxiosPromise, AxiosInterceptorManager, AxiosResponse } from 'axios';
 
 /**
  * In order to only expose the apiVersion and versioningStrategy to axios instances with
@@ -44,15 +39,27 @@ export interface AxiosInstanceWithVersioning {
     get<T = any, R = AxiosResponseWithVersioning<T>>(url: string, config?: AxiosRequestConfigWithVersioning): Promise<R>;
     delete<T = any, R = AxiosResponseWithVersioning<T>>(url: string, config?: AxiosRequestConfigWithVersioning): Promise<R>;
     head<T = any, R = AxiosResponseWithVersioning<T>>(url: string, config?: AxiosRequestConfigWithVersioning): Promise<R>;
-    post<T = any, R = AxiosResponseWithVersioning<T>>(url: string, data?: any, config?: AxiosRequestConfigWithVersioning): Promise<R>;
-    put<T = any, R = AxiosResponseWithVersioning<T>>(url: string, data?: any, config?: AxiosRequestConfigWithVersioning): Promise<R>;
-    patch<T = any, R = AxiosResponseWithVersioning<T>>(url: string, data?: any, config?: AxiosRequestConfigWithVersioning): Promise<R>;
+    post<T = any, R = AxiosResponseWithVersioning<T>>(
+        url: string,
+        data?: any,
+        config?: AxiosRequestConfigWithVersioning
+    ): Promise<R>;
+    put<T = any, R = AxiosResponseWithVersioning<T>>(
+        url: string,
+        data?: any,
+        config?: AxiosRequestConfigWithVersioning
+    ): Promise<R>;
+    patch<T = any, R = AxiosResponseWithVersioning<T>>(
+        url: string,
+        data?: any,
+        config?: AxiosRequestConfigWithVersioning
+    ): Promise<R>;
 }
 
 export default interface AxiosTypes {
-    AxiosRequestConfigWithVersioning: AxiosRequestConfigWithVersioning,
-    AxiosAdapterWithVersioning: AxiosAdapterWithVersioning,
-    AxiosResponseWithVersioning: AxiosResponseWithVersioning,
-    AxiosErrorWithVersioning: AxiosErrorWithVersioning,
-    AxiosInstanceWithVersioning: AxiosInstanceWithVersioning,
+    AxiosRequestConfigWithVersioning: AxiosRequestConfigWithVersioning;
+    AxiosAdapterWithVersioning: AxiosAdapterWithVersioning;
+    AxiosResponseWithVersioning: AxiosResponseWithVersioning;
+    AxiosErrorWithVersioning: AxiosErrorWithVersioning;
+    AxiosInstanceWithVersioning: AxiosInstanceWithVersioning;
 }

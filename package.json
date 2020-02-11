@@ -1,78 +1,70 @@
 {
-  "name": "axios-api-versioning",
-  "author": "Rogelio Negrete (Weffe)",
-  "version": "2.1.0",
-  "description": "Adds api versioning for axios",
-  "main": "dist/lib/index.js",
-  "module": "dist/esm/index.js",
-  "jsnext:main": "dist/esm/index.js",
-  "types": "dist/lib/index.d.ts",
-  "sideEffects": false,
-  "scripts": {
-    "prestart": "run-s clean",
-    "start": "tsc --watch",
-    "build": "run-s clean build:cjs build:esm build:types",
-    "build:cjs": "tsc",
-    "build:esm": "tsc -p tsconfig.esm.json",
-    "build:types": "tsc -p tsconfig.types.json",
-    "sandbox": "tsc -p sandbox/tsconfig.sandbox.json",
-    "clean": "rimraf dist/",
-    "release": "standard-version",
-    "docs": "docsify serve docs -o --port 2065",
-    "test": "jest"
-  },
-  "keywords": [
-    "axios",
-    "api versioning"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Weffe/axios-api-versioning"
-  },
-  "bugs": {
-    "url": "https://github.com/Weffe/axios-api-versioning/issues"
-  },
-  "homepage": "https://github.com/Weffe/axios-api-versioning",
-  "peerDependencies": {
-    "axios": "^0.18.0"
-  },
-  "devDependencies": {
-    "@types/jest": "^24.0.11",
-    "axios": "^0.19.0",
-    "axios-mock-adapter": "^1.16.0",
-    "docsify-cli": "^4.3.0",
-    "http-status-codes": "^1.3.2",
-    "jest": "^24.1.0",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^2.6.3",
-    "standard-version": "^6.0.1",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.3.3333"
-  },
-  "dependencies": {
-    "tslib": "^1.9.3"
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
-  "jest": {
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "transform": {
-      "^.+\\.ts$": "ts-jest"
+    "name": "axios-api-versioning",
+    "author": "Rogelio Negrete (Weffe)",
+    "version": "2.1.0",
+    "description": "Adds api versioning for axios",
+    "main": "dist/index.js",
+    "module": "dist/axios-api-versioning.esm.js",
+    "typings": "dist/index.d.ts",
+    "sideEffects": false,
+    "scripts": {
+        "start": "tsdx watch",
+        "build": "tsdx build",
+        "test": "tsdx test",
+        "sandbox": "tsc -p sandbox/tsconfig.sandbox.json",
+        "prettier": "pretty-quick",
+        "prerelease": "run-s test build",
+        "release": "standard-version",
+        "docs": "docsify serve docs -o --port 2065"
     },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$"
-  }
+    "keywords": [
+        "axios",
+        "api versioning"
+    ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Weffe/axios-api-versioning"
+    },
+    "bugs": {
+        "url": "https://github.com/Weffe/axios-api-versioning/issues"
+    },
+    "homepage": "https://github.com/Weffe/axios-api-versioning",
+    "peerDependencies": {
+        "axios": "^0.18.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^25.1.2",
+        "axios": "^0.19.2",
+        "axios-mock-adapter": "^1.17.0",
+        "docsify-cli": "^4.3.0",
+        "http-status-codes": "^1.3.2",
+        "husky": "^4.2.1",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "standard-version": "^7.1.0",
+        "ts-jest": "^25.2.0",
+        "tsdx": "^0.12.3",
+        "typescript": "^3.7.5"
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    },
+    "prettier": {
+        "printWidth": 130,
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "useTabs": false,
+        "singleQuote": true,
+        "arrowParens": "always",
+        "endOfLine": "lf"
+    }
 }
