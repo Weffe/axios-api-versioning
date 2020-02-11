@@ -4,7 +4,7 @@
     "version": "2.1.0",
     "description": "Adds api versioning for axios",
     "main": "dist/index.js",
-    "module": "dist/axios-api-versioning.js",
+    "module": "dist/axios-api-versioning.esm.js",
     "typings": "dist/index.d.ts",
     "sideEffects": false,
     "scripts": {
