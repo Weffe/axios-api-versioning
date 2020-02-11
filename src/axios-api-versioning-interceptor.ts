@@ -1,14 +1,15 @@
 import { AxiosInstance } from 'axios';
-import { VersioningStrategy, IVersioningConfig, } from './types'
-import { AxiosRequestConfigWithVersioning } from './types/axios';
+import { VersioningStrategy, IVersioningConfig, AxiosRequestConfigWithVersioning } from './types';
 
 function replaceUrlPathWithVersion(url: string, apiVersion: string) {
     // the template name of the api version must be "apiVersion"
     return url.replace('{apiVersion}', apiVersion);
 }
 
-function enhanceConfigByVersioningStrategy(requestConfig: AxiosRequestConfigWithVersioning, versioningConfig: IVersioningConfig): AxiosRequestConfigWithVersioning {
-
+function enhanceConfigByVersioningStrategy(
+    requestConfig: AxiosRequestConfigWithVersioning,
+    versioningConfig: IVersioningConfig
+): AxiosRequestConfigWithVersioning {
     // we prioritize the apiVersion passed via the RequestConfig first
     // then use the initial versioningConfig last
     const apiVersion = requestConfig['apiVersion'] || versioningConfig['apiVersion'];
@@ -19,13 +20,13 @@ function enhanceConfigByVersioningStrategy(requestConfig: AxiosRequestConfigWith
     if (versioningStrategy === VersioningStrategy.QueryString) {
         requestConfig.params = {
             ...requestConfig.params,
-            [versioningConfig.queryStringKeyName]: apiVersion
+            [versioningConfig.queryStringKeyName]: apiVersion,
         };
     }
 
     if (versioningStrategy === VersioningStrategy.MediaType) {
-        const defaultAcceptHeader: string = requestConfig.headers.common["Accept"];
-        const reqAcceptHeader: string | undefined = requestConfig.headers["Accept"] || undefined;
+        const defaultAcceptHeader: string = requestConfig.headers.common['Accept'];
+        const reqAcceptHeader: string | undefined = requestConfig.headers['Accept'] || undefined;
 
         // we prioritize an accept header passed in the RequestConfig but default to the
         // the common default accept header value axios provides
@@ -35,19 +36,18 @@ function enhanceConfigByVersioningStrategy(requestConfig: AxiosRequestConfigWith
             const formattedAcceptHeader = versioningConfig.mediaTypeFormatter({
                 apiVersion,
                 acceptHeader,
-                mediaTypeKeyName: versioningConfig.mediaTypeKeyName
-            })
+                mediaTypeKeyName: versioningConfig.mediaTypeKeyName,
+            });
 
             requestConfig.headers = {
                 ...requestConfig.headers,
-                ["Accept"]: formattedAcceptHeader
-            }
-        }
-        else {
+                ['Accept']: formattedAcceptHeader,
+            };
+        } else {
             requestConfig.headers = {
                 ...requestConfig.headers,
-                ["Accept"]: acceptHeader + `;${versioningConfig.mediaTypeKeyName}=${apiVersion}`
-            }
+                ['Accept']: acceptHeader + `;${versioningConfig.mediaTypeKeyName}=${apiVersion}`,
+            };
         }
     }
 
