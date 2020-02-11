@@ -4,4 +4,4 @@ export {
     AxiosResponseWithVersioning,
     AxiosErrorWithVersioning,
     AxiosInstanceWithVersioning,
-} from './axios.types'
+} from './axios.types';
