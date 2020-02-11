@@ -66,5 +66,8 @@
         "singleQuote": true,
         "arrowParens": "always",
         "endOfLine": "lf"
+    },
+    "dependencies": {
+        "tslib": "^1.10.0"
     }
 }
