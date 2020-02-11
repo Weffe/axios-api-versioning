@@ -18,7 +18,7 @@ declare module 'axios' {
 
 describe('Testing no pollution on default exported axios object using withVersioning()', () => {
     beforeAll(() => {
-        const instance = withVersioning(axios, testVersioningConfig);
+        withVersioning(axios, testVersioningConfig);
     });
 
     test('it should not add "apiVersion" to AxiosStatic defaults', () => {
