@@ -1,8 +1,9 @@
 # axios-api-versioning
 
 [![npm version](http://img.shields.io/npm/v/axios-api-versioning.svg)](https://npmjs.org/package/axios-api-versioning "View this project on npm")
-[![Greenkeeper badge](https://badges.greenkeeper.io/Weffe/axios-api-versioning.svg)](https://greenkeeper.io/)
 [![CircleCI](https://circleci.com/gh/Weffe/axios-api-versioning/tree/master.svg?style=svg)](https://circleci.com/gh/Weffe/axios-api-versioning/tree/master)
+![status](https://img.shields.io/badge/status-stable-green)
+![status](https://img.shields.io/badge/maintained-yes-green)
 
 Add easy to manage api versioning to [axios](https://github.com/axios/axios)
 
