@@ -7,7 +7,7 @@
     "start": "node main.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "axios-api-versioning": "~2.1.0"
   },
   "devDependencies": {
